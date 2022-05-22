@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color:#ffffff;
+        color:#fff;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6%;
+    background: linear-gradient(to right,#3f5efb,#fc466b);
+      }
+      .nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+  }
+ table,th {
+  border: 1px solid rgb(255, 255, 255) ;
+ 
+  border-collapse:collapse;
+}
+</style>
+</head>
+<table> 
+    <caption>NAME: KANAGA BHARATH</caption> 
+    <caption>DEPARTMENT: CIVIL</caption> 
+    <tr> 
+        <th class="border1"></th>
+        <th></th> 
+        <th>Mark</th> 
+        
+    </tr> 
+    <tr> 
+        <th rowspan="3">Skill Training</th> 
+        <th>Foundation Course</th> 
+        <th>289</th> 
+        
+    </tr> 
+    <tr> 
+        <th>Technical Course / FIS</th> 
+        <th>-</th> 
+        
+    </tr> 
+    <tr> 
+        <th>Faculty Interview</th> 
+        <th>100</th> 
+         
+    </tr>
+    <tr> 
+        <th rowspan="4">Resource Utilization/Industry Relationship</th> 
+        <th>Online Courses</th> 
+        <th>50</th> 
+        
+    </tr> 
+    <tr> 
+        <th>Internship</th> 
+        <th>-</th> 
+        
+    </tr> 
+    <tr> 
+        <th>In plant Training</th> 
+        <th>-</th> 
+         
+    </tr>
+    <tr> 
+        <th>Interaction with HR</th> 
+        <th>-</th> 
+         
+    </tr>
+    <tr> 
+        <th rowspan="6">Student Achievements</th> 
+        <th>Project Presentation</th> 
+        <th>-</th> 
+        
+    </tr> 
+    <tr> 
+        <th>Paper Presentation</th> 
+        <th>-</th> 
+        
+    </tr> 
+    <tr> 
+        <th>Journal Publications</th> 
+        <th>-</th> 
+         
+    </tr>
+    <tr> 
+        <th>Patent</th> 
+        <th>-</th> 
+         
+    </tr>
+    <tr> 
+        <th>Consultancy</th> 
+        <th>-</th> 
+         
+    </tr>
+    <tr> 
+        <th>Product Development</th> 
+        <th>-</th> 
+         
+    </tr>
+    <tr> 
+        <th rowspan="4">Add On Activities</th> 
+        <th>Assignment Series</th> 
+        <th>20</th> 
+        
+    </tr> 
+    <tr> 
+        <th>Video Logs </th> 
+        <th>-</th> 
+        
+    </tr> 
+    <tr> 
+        <th>Sports Activities</th> 
+        <th>100</th> 
+         
+    </tr>
+    <tr> 
+        <th>Outreach Activities</th> 
+        <th>10</th> 
+         
+    </tr>
+   
+</table>
+
+
+   
+   
+  
+    <input type="button" onclick="printhiv()" value="Print" />
+    <script>
+      function printhiv() {
+        //alert('s');
+        var printContents =
+          '<div id="print-content"><form><table width="30%"><tbody>';
+        var inputs, index;
+
+        inputs = document.getElementsByTagName("input");
+        for (index = 0; index < inputs.length - 1; ++index) {
+          var fieldName = inputs[index].name;
+          var fieldValue = inputs[index].value;
+
+          printContents += "<tr><th><label>" + fieldName + "</label></th>";
+          printContents += "<th>" + fieldValue + "</th></tr>";
+        }
+
+        var z = 11; // if you had more labels remeber to change this value
+        inputs = document.getElementsByTagName("textarea");
+        for (index = 0; index < inputs.length; ++index) {
+          //var fieldName = inputs[index].name;
+          var fieldName = document.getElementsByTagName("label")[z].textContent;
+          var fieldValue = inputs[index].value;
+
+          printContents +=
+            '<tr><th colspan="2"><label>' +
+            fieldName +
+            "</label><br>" +
+            fieldValue +
+            "</th></tr>";
+          ++z;
+        }
+
+        printContents += "</tbody></table>";
+
+        w = window.open();
+        w.document.write(printContents);
+        w.print();
+        w.close();
+      }
+    </script>
+  </body>
+</html>
